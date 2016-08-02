@@ -32,7 +32,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>ลำดับ</th>
+                        <th>ลำดับ adm</th>
                         <th>หัวข้อข่าว</th>
                         <th>โดย</th>
                         <th>อ่าน</th>

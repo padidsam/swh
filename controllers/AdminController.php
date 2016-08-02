@@ -237,6 +237,74 @@ public function actionDownloaddel($id=null)
       return $this->redirect(['admin/download']);
 }
 
+//ACTION Department จัดการข้อมูลในหน่วยงาน
+public function actionDepartment()
+{
+
+  $Query = "SELECT * FROM hos_department ORDER BY ID DESC";
+  try {
+    $getData = \Yii::$app->db->createCommand($Query)->queryAll();
+  } catch (\yii\db\Exception $e) {
+    throw new \yii\web\ConflictHttpException('Error!! พบปัญหากับคำสั่ง SQL ดังนี้ ' . $e);
+  }
+  $dataProvider = new \yii\data\ArrayDataProvider([
+    'allModels' => $getData,
+    'pagination' => False,
+  ]);
+
+  return $this->render('department', [
+    'dataProvider' => $dataProvider,
+    'sql' => $Query
+  ]);
+
+}
+
+
+public function actionDepartmentset($id='')
+{
+  $model = new \app\models\DepartmentModels();
+if (!empty($_POST)) {
+  if (!empty($id)) {
+    $model = \app\models\DownloadModels::findOne($id);
+    $model->DATE_TIME_UPDATE= date('Y-m-d H:i:s');//วันที่อัพเดช
+    $model->USER_POST = Yii::$app->session->get('my_username');
+
+    if ($model->load(Yii::$app->request->post()) && $model->update()) {
+      return $this->redirect(['admin/department']);
+    } else {
+      return $this->redirect(['admin/department']);
+    }
+  } else {
+    $model->DATE_TIME_SAVE = date('Y-m-d H:i:s');//วันที่เพิ่ม
+    $model->USER_POST = Yii::$app->session->get('my_username');
+
+    if ($model->load(Yii::$app->request->post()) && $model->save()) {
+      return $this->redirect(['admin/department']);
+    } else {
+      return $this->render('department_set', [
+        'model' => $model,
+      ]);
+    }
+  }
+}
+
+if (!empty($id)) {
+  //$model = $this->findModel($id);
+  $model = \app\models\DownloadModels::findOne($id);
+}
+
+return $this->render('department_set', [
+  'model' => $model,
+]);
+}
+
+
+public function actionDepartmentdel($id=null)
+{
+      \app\models\DownloadModels::findOne($id)->delete($id);
+      return $this->redirect(['admin/department']);
+}
+
 
 }
 

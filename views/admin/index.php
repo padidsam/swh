@@ -54,14 +54,16 @@
     <!-- FAQ Blocks -->
     <div class="row equal-height-columns margin-bottom-40">
       <div class="col-sm-4">
+          <a href='index.php?r=admin/department'>
         <div class="easy-block-v3 service-or equal-height-column">
           <div class="service-bg"></div>
           <i class="icon-badge"></i>
           <div class="inner-faq-b">
-            <h3>What is Unify Template?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dapibus justo vel tincidunt consectetur.</p>
+            <h3>Department</h3>
+            <p>ข้อมูลหน่วยงาน</p>
           </div>
         </div>
+              </a>
       </div>
       <div class="col-sm-4">
         <div class="easy-block-v3 service-or equal-height-column">

@@ -4,7 +4,7 @@
 <!--[if !IE]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Home Default 2 | Unify - Responsive Website Template</title>
+    <title>Suwankhuha Hospital</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -86,7 +86,7 @@
         <div class="container">
             <!-- Logo -->
             <a class="logo" href="index.php">
-                <img src="images/logo2.jpg" alt="Logo">
+                <img src="images/swh_logo.jpg" alt="Logo">
             </a>
             <!-- End Logo -->
 
