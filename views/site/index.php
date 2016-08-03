@@ -37,8 +37,8 @@
                     data-endeasing="Power1.easeIn"
                     data-captionhidden="off"
                     style="z-index: 6">
-                    We are creative technology company providing <br/>
-                    key digital services on web and mobile.
+<!--                    We are creative technology company providing <br/>
+                    key digital services on web and mobile.-->
                 </div>
 
                 <!-- LAYER -->
