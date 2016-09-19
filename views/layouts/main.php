@@ -117,7 +117,7 @@
                     <!-- Home -->
                     <li class="active">
                         <a href="index.php" class="stoggle" data-toggle="">
-                            HOME
+                            หน้าหลัก
                         </a>
                     </li>
                     <!-- End Home -->
@@ -127,7 +127,7 @@
                     <!-- Blog -->
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                            DEPARTMENT
+                            หน่วยงาน
                         </a>
                         <ul class="dropdown-menu">
                           <?php
@@ -149,84 +149,41 @@
 
                     <!-- Features -->
         <li class="dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                ABOUT-US
-            </a>
-            <ul class="dropdown-menu">
-                <li class="dropdown-submenu">
-                    <a href="javascript:void(0);">Headers</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="feature_header_default.html">Header Default</a></li>
-                        <li><a href="feature_header_default_no_topbar.html">Header Default without Topbar</a></li>
-                        <li><a href="feature_header_default_centered.html">Header Default Centered</a></li>
-                        <li><a href="feature_header_default_fixed.html">Header Default Fixed (Sticky)</a></li>
-                        <li><a href="feature_header_default_login_popup.html">Header Default Login Popup</a></li>
-                        <li><a href="feature_header_v1.html">Header v1</a></li>
-                        <li><a href="feature_header_v2.html">Header v2</a></li>
-                        <li><a href="feature_header_v3.html">Header v3</a></li>
-                        <li><a href="feature_header_v4.html">Header v4</a></li>
-                        <li><a href="feature_header_v4_logo_centered.html">Header v4 Centered Logo</a></li>
-                        <li><a href="feature_header_v5.html">Header v5</a></li>
-                        <li><a href="feature_header_v6_transparent.html">Header v6 Transparent</a></li>
-                        <li><a href="feature_header_v6_semi_dark_transparent.html">Header v6 Dark Transparent</a></li>
-                        <li><a href="feature_header_v6_semi_white_transparent.html">Header v6 White Transparent</a></li>
-                        <li><a href="feature_header_v6_border_bottom.html">Header v6 Border Bottom</a></li>
-                        <li><a href="feature_header_v6_classic_dark.html">Header v6 Classic Dark</a></li>
-                        <li><a href="feature_header_v6_classic_white.html">Header v6 Classic White</a></li>
-                        <li><a href="feature_header_v6_dark_dropdown.html">Header v6 Dark Dropdown</a></li>
-                        <li><a href="feature_header_v6_dark_scroll.html">Header v6 Dark on Scroll</a></li>
-                        <li><a href="feature_header_v6_dark_search.html">Header v6 Dark Search</a></li>
-                        <li><a href="feature_header_v6_dark_res_nav.html">Header v6 Dark in Responsive</a></li>
-                        <li><a href="page_home12.html">Header v7 Left Sidebar</a></li>
-                        <li><a href="page_home13.html">Header v7 Right Sidebar</a></li>
-                        <li><a href="feature_header_v8.html">Header v8</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown-submenu">
-                    <a href="javascript:void(0);">Footers</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="feature_footer_default.html#footer-default">Footer Default</a></li>
-                        <li><a href="feature_footer_v1.html#footer-v1">Footer v1</a></li>
-                        <li><a href="feature_footer_v2.html#footer-v2">Footer v2</a></li>
-                        <li><a href="feature_footer_v3.html#footer-v3">Footer v3</a></li>
-                        <li><a href="feature_footer_v4.html#footer-v4">Footer v4</a></li>
-                        <li><a href="feature_footer_v5.html#footer-v5">Footer v5</a></li>
-                        <li><a href="feature_footer_v6.html#footer-v6">Footer v6</a></li>
-                        <li><a href="feature_footer_v7.html#footer-v7">Footer v7</a></li>
-                        <li><a href="feature_footer_v8.html#footer-v8">Footer v8</a></li>
-                    </ul>
-                </li>
-                <li><a href="feature_gallery.html">Gallery Examples</a></li>
-                <li><a href="feature_animations.html">Animations on Scroll</a></li>
-                <li><a href="feature_parallax_counters.html">Parallax Counters</a></li>
-                <li><a href="feature_testimonials_quotes.html">Testimonials and Quotes</a></li>
-                <li><a href="feature_icon_blocks.html">Icon Blocks</a></li>
-                <li><a href="feature_team_blocks.html">Team Blocks</a></li>
-                <li><a href="feature_news_blocks.html">News Blocks</a></li>
-                <li><a href="feature_parallax_blocks.html">Parallax Blocks</a></li>
-                <li><a href="feature_funny_boxes.html">Funny Boxes</a></li>
-            </ul>
-        </li>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            เกี่ยวกับโรงพยาบาล
+                        </a>
+                        <ul class="dropdown-menu">
+                          <?php
+                          $depList = Yii::$app->db->createCommand("SELECT * FROM hos_about ")->queryAll();
+                          foreach ($depList as $ds) {
+                              ?>
+                        <li>  <a href="index.php?r=about/index&id=<?= $ds['ID'] ?>" class="list-group-item"><?=$ds['ABOUT']?></a></li>
+                           <?php
+                           }
+                            ?>
+
+                        </ul>
+                    </li>
         <!-- End Features -->
 
 
                     <!-- Misc Pages -->
                     <li class="">
                         <a href="index.php?r=news/index" class="dropdown-toggle" data-toggle="">
-                            NEWS
+                            ข่าวสาร
                         </a>
                     </li>
 
                     <li class="">
                         <a href="index.php?r=board/index" class="dropdown-toggle" data-toggle="">
-                            WEBBOARD
+                            เว็บบอร์ด
                         </a>
                     </li>
                     <!-- End Misc Pages -->
 <?php if (Yii::$app->session->get('my_user_id') == null) { ?>
                     <li class="">
                         <a href="index.php?r=regis/index" class="dropdown-toggle" data-toggle="">
-                            REGIS
+                            ลงทะเบียน
                         </a>
                     </li>
 <?php } ?>
@@ -236,7 +193,7 @@
                     <li class="">
 
                         <a href="index.php?r=user/login" class="dropdown-toggle" data-toggle="">
-                            LOGINS
+                            เข้าสู่ระบบ
                         </a>
                     </li>
   <?php   } else { ?>
@@ -313,14 +270,14 @@
                 <div class="row">
                     <!-- About -->
                     <div class="col-md-3 md-margin-bottom-40">
-                        <a href="index.html"><img id="logo-footer" class="footer-logo" src="theme/mytheme/assets/img/logo2-default.png" alt=""></a>
-                        <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                        <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
+                        <a href="">วิสัยทัศน์</a>
+                        <p>โรงพยาบาลสุวรรณคูหาเป็นโรงพยาบาลชุมชนที่มีคุณภาพ มาตรฐาน
+                        มีเครือข่ายชุมชนที่เข้มแข็ง</p>
                     </div><!--/col-md-3-->
                     <!-- End About -->
 
                     <!-- Latest -->
-                    <div class="col-md-3 md-margin-bottom-40">
+<!--                    <div class="col-md-3 md-margin-bottom-40">
                         <div class="posts">
                             <div class="headline"><h2>Latest Posts</h2></div>
                             <ul class="list-unstyled latest-list">
@@ -338,18 +295,19 @@
                                 </li>
                             </ul>
                         </div>
-                    </div><!--/col-md-3-->
+                    </div>-->
+                    <!--/col-md-3-->
                     <!-- End Latest -->
 
                     <!-- Link List -->
                     <div class="col-md-3 md-margin-bottom-40">
-                        <div class="headline"><h2>Useful Links</h2></div>
+                        <div class="headline"><h2>Web Links</h2></div>
                         <ul class="list-unstyled link-list">
-                            <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="http://wwwnpo.moph.go.th" target="_blank">สสจ.หนองบัวลำภู</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="http://udonthani.nhso.go.th/" target="_blank">สปสช เขต 8</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="http://www.nhso.go.th" target="_blank">สปสช.</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://www.moph.go.th" target="_blank">กระทรวงสาธารณสุข</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="http://bps.moph.go.th/" target="_blank">สนย.</a><i class="fa fa-angle-right"></i></li>
                         </ul>
                     </div><!--/col-md-3-->
                     <!-- End Link List -->
@@ -358,11 +316,12 @@
                     <div class="col-md-3 map-img md-margin-bottom-40">
                         <div class="headline"><h2>Contact Us</h2></div>
                         <address class="md-margin-bottom-40">
-                            25, Lorem Lis Street, Orange <br />
-                            California, US <br />
-                            Phone: 800 123 3456 <br />
-                            Fax: 800 123 3456 <br />
-                            Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                            โรงพยาบาลสุวรรณคูหา
+                            400 ต.สุวรรณคูหา อ.สุวรรณคูหา <br />
+                            จ. หนองบัวลำภู 39270 <br />
+                            Phone: 042372209,042372169 <br />
+                            Fax: 04232209 ต่อ 113 <br />
+                            Email: <a href="mailto:info@swh.go.th" class="">info@swh.go.th</a>
                         </address>
                     </div><!--/col-md-3-->
                     <!-- End Address -->
@@ -375,7 +334,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p>
-                            2015 &copy; All Rights Reserved.
+                            2016 &copy; All Rights Reserved.
                            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                         </p>
                     </div>

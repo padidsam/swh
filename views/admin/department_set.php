@@ -53,7 +53,7 @@
     <ol class="breadcrumb">
         <li><a href="index.php?r=admin/index">Home</a></li>
         <li><a href="index.php?r=admin/department">Department</a></li>
-        <li class="active">Detail</li>
+        <li class="active">Department Set</li>
     </ol>
 
 
@@ -64,7 +64,7 @@
             <a type="button" href="index.php?r=admin/department" class="btn-u btn-u-xs rounded btn-u-red pull-right">กลับ.</a>
 
 
-            <h5 class="panel-title">DOWNLOAD</h5>
+            <h5 class="panel-title">Department</h5>
         </div>
     </div>
 

@@ -58,7 +58,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new LoginForm();
+        $model = new LoginForm(); //LoginForm คือ ชื่อไฟล์ที่อยู่ใน models
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }

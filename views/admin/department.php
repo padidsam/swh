@@ -2,7 +2,7 @@
 
   <ol class="breadcrumb">
     <li><a href="index.php?r=admin/index">Home</a></li>
-    <li class="active">User</li>
+    <li class="active">Department</li>
   </ol>
 
 
@@ -10,7 +10,7 @@
     <div class="panel-heading" >
       <!--        <span class="pull-left"><img src="images/home.png"></span>-->
       <!--        <span class="label pull-right label-danger">Danger</span> -->
-      <a type="button" href="index.php?r=admin/downloadset" class="btn-u btn-u-xs rounded btn-u-red pull-right">เพิ่ม</a>
+      <a type="button" href="index.php?r=admin/departmentset" class="btn-u btn-u-xs rounded btn-u-red pull-right">เพิ่ม</a>
 
       <h5 class="panel-title">หน้าหลัก หน่วยงาน</h5>
     </div>

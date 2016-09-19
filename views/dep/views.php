@@ -1,5 +1,4 @@
 <div class="container content">
-aaaaa
 <ol class="breadcrumb">
     <li><a href="index.php">Home</a></li>
     <li><a href="index.php?r=news/index">News</a></li>
